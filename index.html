@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Flowalive — платформер</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game-container">
+  <canvas id="game" width="1280" height="720"></canvas>
+
+  <button id="pause-btn" class="hud-pause hidden">⏸ Пауза (Esc)</button>
+
+  <div id="menu-overlay" class="overlay">
+    <div class="menu-panel">
+      <h1>Flowalive</h1>
+      <p class="subtitle">— ПЛАТФОРМЕР —</p>
+
+      <div class="menu-section">
+        <h2>Управление</h2>
+        <div class="key-row"><span class="key">A</span><span class="key">D</span> / <span class="key">←</span><span class="key">→</span> — движение</div>
+        <div class="key-row"><span class="key">W</span> / <span class="key">↑</span> / <span class="key">Space</span> — прыжок</div>
+        <div class="key-row"><span class="key">E</span> — щит (10 сек)</div>
+        <div class="key-row"><span class="key">Q</span> — огненная сфера</div>
+        <div class="key-row"><span class="key">Esc</span> — пауза / выход в меню</div>
+      </div>
+
+      <div class="menu-section">
+        <h2>Правила</h2>
+        <ul class="rules-list">
+          <li>Собери все свитки и дойди до короны.</li>
+          <li>Уворачивайся от фаерболов монстров.</li>
+          <li>Не касайся ядовитых цветов.</li>
+          <li>Очки: +10 за свиток, +100 за финиш.</li>
+        </ul>
+      </div>
+
+      <div class="menu-section">
+        <h2>Уровень</h2>
+        <div class="level-buttons" id="level-buttons">
+          <button class="level-btn" data-level="0">
+            <span class="lvl-name">1. Луга</span>
+            <span class="lvl-desc">Лёгкий</span>
+          </button>
+          <button class="level-btn" data-level="1">
+            <span class="lvl-name">2. Небеса</span>
+            <span class="lvl-desc">Средний</span>
+          </button>
+          <button class="level-btn" data-level="2">
+            <span class="lvl-name">3. ∞ Бесконечность</span>
+            <span class="lvl-desc">Уровни генерируются дальше</span>
+          </button>
+        </div>
+      </div>
+
+      <button class="start-btn" id="start-btn">Начать игру</button>
+    </div>
+  </div>
+
+  <div id="pause-overlay" class="overlay hidden">
+    <div class="menu-panel" style="max-width: 420px;">
+      <h1 style="font-size: clamp(28px, 4vmin, 44px);">Пауза</h1>
+      <p class="subtitle">— игра приостановлена —</p>
+      <button class="start-btn" id="pause-continue-btn">Продолжить</button>
+      <button class="action-btn pause-btn-row" id="pause-restart-btn">Начать заново</button>
+      <button class="action-btn secondary pause-btn-row" id="pause-menu-btn">В главное меню</button>
+    </div>
+  </div>
+
+  <div id="game-over-buttons" class="hidden">
+    <button class="action-btn" id="retry-btn">Сыграть ещё раз</button>
+    <button class="action-btn" id="next-btn">Следующий уровень →</button>
+    <button class="action-btn secondary" id="menu-btn">В главное меню</button>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/input.js"></script>
+<script src="js/collision.js"></script>
+<script src="js/sprite.js"></script>
+<script src="js/Player.js"></script>
+<script src="js/Renderer.js"></script>
+<script src="js/Game.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
